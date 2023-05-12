@@ -1,0 +1,20 @@
+[user]
+	name = rods
+	email = rodel.cabubas@asurion.com
+	signingkey = 0EE4C2F5BCABB592
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+
+[alias]
+  st = status
+  p = push -u origin HEAD
+  l = log --graph
+  stg-bg = add ./src/*
+  unstg = restore --staged .
+
+[pull]
+	ff = only
+	rebase = false
+[commit]
+	gpgsign = true

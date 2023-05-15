@@ -1,3 +1,4 @@
+-- vim.notify = require('notify');
 require "core.options"
 require "core.mappings"
 require "core.colorscheme"
@@ -22,6 +23,7 @@ require "core.configs.fidget"
 require "core.configs.outline"
 require "core.configs.dap.javascript".setup()
 require "core.configs.dap".setup()
+require "core.configs.overseer";
 -- require "core.configs.lsp.java"
 --require "core.configs.sidebar"
 -- require "core.configs.catppuccino"

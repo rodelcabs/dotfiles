@@ -5,17 +5,13 @@ local function configure()
     vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg=0, fg='#61afef'})
     vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg=0, fg='#98c379' })
 
-    vim.fn.sign_define('DapBreakpoint', { text='', texthl='DapBreakpoint' })
+    vim.fn.sign_define('DapBreakpoint', { text='●', texthl='DapBreakpoint' })
     vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpoint' })
     vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpoint' })
     vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPoint' })
-    -- vim.fn.sign_define('DapStopped', { text='', texthl='DapStopped' })
 end
 
 local function configure_exts()
-  -- require("nvim-dap-virtual-text").setup {
-  --   commented = true,
-  -- }
 
   local dap, dapui = require "dap", require "dapui"
   dapui.setup {
@@ -56,16 +52,10 @@ local function configure_exts()
   end
 end
 
-local function configure_debuggers()
-  require("plugins.configs.dap.typescript").setup()
-end
-
 function M.setup()
   configure() -- Configuration
   configure_exts() -- Extensions
-  -- configure_debuggers() -- Debugger
 end
 
--- configure_debuggers()
 
 return M

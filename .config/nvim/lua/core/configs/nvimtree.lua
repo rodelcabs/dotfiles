@@ -15,14 +15,14 @@ nvim_tree.ignore_ft_on_setup = {
     "alpha",
 }
 
-local on_attach = function()
+local on_attach = function(bufnr)
   local api = require('nvim-tree.api');
   local function opts(desc)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-  -- vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
-  vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'l', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<CR>', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
 
 end
 

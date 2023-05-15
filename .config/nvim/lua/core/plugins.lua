@@ -120,6 +120,16 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap" }
   use { "mxsdev/nvim-dap-vscode-js" }
   use { "rcarriga/nvim-dap-ui" }
+
+  use { 'stevearc/overseer.nvim' }
+  use {
+        'rcarriga/nvim-notify',
+        config = function ()
+            require('notify').setup({
+                background_colour = '#141b1e'
+            }) 
+        end 
+    }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

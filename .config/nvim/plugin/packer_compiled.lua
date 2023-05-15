@@ -149,11 +149,6 @@ _G.packer_plugins = {
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
   },
-  everblush = {
-    loaded = true,
-    path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/everblush",
-    url = "https://github.com/Everblush/nvim"
-  },
   ["fidget.nvim"] = {
     loaded = true,
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/fidget.nvim",
@@ -208,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/minimap.vim",
     url = "https://github.com/wfxr/minimap.vim"
+  },
+  ["nightly.nvim"] = {
+    loaded = true,
+    path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/nightly.nvim",
+    url = "https://github.com/Alexis12119/nightly.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
@@ -266,6 +266,12 @@ _G.packer_plugins = {
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\22background_colour\f#141b1e\nsetup\vnotify\frequire\0" },
+    loaded = true,
+    path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/nvim-transparent",
@@ -295,6 +301,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
+  },
+  ["overseer.nvim"] = {
+    loaded = true,
+    path = "/Users/rodel.cabubas/.local/share/nvim/site/pack/packer/start/overseer.nvim",
+    url = "https://github.com/stevearc/overseer.nvim"
   },
   ["oxocarbon.nvim"] = {
     loaded = true,
@@ -384,6 +395,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-notify
+time([[Config for nvim-notify]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\22background_colour\f#141b1e\nsetup\vnotify\frequire\0", "config", "nvim-notify")
+time([[Config for nvim-notify]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

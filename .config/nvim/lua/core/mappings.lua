@@ -150,7 +150,11 @@ keymap("n", '<F12>', ':lua require(\'dap\').step_out()<CR>', opts)
 
 -- debug test
 keymap("n", "<Leader>dt", "<cmd> lua require('core.configs.dap.debug_test').debugNearTest(); <CR>", opts)
+keymap("n", "<Leader>dT", "<cmd> lua require('core.configs.dap.debug_test').debugNearTest(true); <CR>", opts)
 
 -- comments
 keymap("n", "<Leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current(); <CR>", opts)
 keymap("v", "<Leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts);
+
+--overseer for tests
+keymap("n", " rt", "<cmd>RunCurrentTest<CR>", opts);

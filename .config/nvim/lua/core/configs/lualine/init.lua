@@ -31,9 +31,9 @@ config = function()
         lualine_b = {},
         lualine_c = {
           stl.mode,
+          stl.filename,
           stl.branch,
           stl.diagnostics,
-          stl.filename,
           "%=",
         },
         lualine_x = {

@@ -55,6 +55,8 @@ end
 function M.setup()
   configure() -- Configuration
   configure_exts() -- Extensions
+  -- support for vscode debug configs
+  require('dap.ext.vscode').load_launchjs();
 end
 
 

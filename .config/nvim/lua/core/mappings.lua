@@ -158,3 +158,7 @@ keymap("v", "<Leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(v
 
 --overseer for tests
 keymap("n", " rt", "<cmd>RunCurrentTest<CR>", opts);
+keymap("n", " ri", "<cmd>RunCurrentIntegrationTest<CR>", opts);
+keymap("n", " rT", "<cmd>RunCurrentTestWithOutput<CR>", opts);
+keymap("n", " rI", "<cmd>RunCurrentIntegrationTestWithOutput<CR>", opts);
+keymap("n", "<Leader>o", "<cmd>OverseerToggle<CR>", opts);

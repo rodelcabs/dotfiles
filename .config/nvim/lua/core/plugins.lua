@@ -55,7 +55,12 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
   use 'arkav/lualine-lsp-progress'
-  use 'wfxr/minimap.vim'
+  use { 
+        'wfxr/minimap.vim',
+        config = function ()
+            vim.g.minimap_auto_start = 1;
+        end
+    }
   -- Colorschemes
   use "overcache/NeoSolarized"
   use "robertmeta/nofrils"

@@ -20,44 +20,44 @@ M.setup = function ()
 
     for _, language in ipairs({'typescript', 'javascript'}) do
         dap.configurations[language] = {
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch file (TS)",
-            runtimeArgs = { "-r", "ts-node/register" },
-            runtimeExecutable = "node",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-          },
-          {
-            type = "pwa-node",
-            request = "attach",
-            name = "Attach",
-            processId = require'dap.utils'.pick_process,
-            cwd = "${workspaceFolder}",
-          },
-          {
-            type = "node2",
-            request = "attach",
-            name = "Attach2 - port 3000",
-            port = 3000,
-            processId = require'dap.utils'.pick_process,
-            cwd = "${workspaceFolder}",
-          },
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Debug Test File",
-            -- trace = true, -- include debugger info
-            runtimeExecutable = "mocha",
-            runtimeArgs = {
-              "${file}",
+            {
+                type = "pwa-node",
+                request = "launch",
+                name = "Launch file (TS)",
+                runtimeArgs = { "-r", "ts-node/register" },
+                runtimeExecutable = "node",
+                program = "${file}",
+                cwd = "${workspaceFolder}",
             },
-            rootPath = "${workspaceFolder}",
-            cwd = "${workspaceFolder}",
-            console = "integratedTerminal",
-            internalConsoleOptions = "neverOpen",
-          },
+            {
+                type = "pwa-node",
+                request = "attach",
+                name = "Attach",
+                processId = require'dap.utils'.pick_process,
+                cwd = "${workspaceFolder}",
+            },
+            {
+                type = "node2",
+                request = "attach",
+                name = "Attach2 - port 3000",
+                port = 3000,
+                processId = require'dap.utils'.pick_process,
+                cwd = "${workspaceFolder}",
+            },
+            {
+                type = "pwa-node",
+                request = "launch",
+                name = "Debug Test File",
+                -- trace = true, -- include debugger info
+                runtimeExecutable = "mocha",
+                runtimeArgs = {
+                  "${file}",
+            },
+                rootPath = "${workspaceFolder}",
+                cwd = "${workspaceFolder}",
+                console = "integratedTerminal",
+                internalConsoleOptions = "neverOpen",
+            },
         }
     end
 end

@@ -2,6 +2,10 @@ require('nightly').setup({
     transparent = true
 });
 
+vim.opt.fillchars = {
+    eob = ' ',
+}
+
 vim.cmd[[
 try
   colorscheme nightly

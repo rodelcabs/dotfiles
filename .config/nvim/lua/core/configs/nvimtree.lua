@@ -21,13 +21,14 @@ local on_attach = function(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'l', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<CR>', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
+  vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<CR>', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
 
 end
 
 nvim_tree.setup {
-  -- on_attach = on_attach,
+  on_attach = on_attach,
   disable_netrw = true,
   hijack_netrw = true,
   hijack_cursor = false,
@@ -61,14 +62,14 @@ nvim_tree.setup {
     hide_root_folder = false,
     side = "left",
     -- auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
+    -- mappings = {
+    --   custom_only = false,
+    --   list = {
+    --     { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+    --     { key = "h", cb = tree_cb "close_node" },
+    --     { key = "v", cb = tree_cb "vsplit" },
+    --   },
+    -- },
     number = false,
     relativenumber = false,
   },

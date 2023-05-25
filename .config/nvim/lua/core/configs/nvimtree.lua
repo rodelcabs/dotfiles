@@ -23,8 +23,8 @@ local on_attach = function(bufnr)
 
   vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<CR>', "<cmd>lua require('nvim-tree.api').node.open.edit <CR>", opts('Open'))
-
+  vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
+  vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
 end
 
 nvim_tree.setup {

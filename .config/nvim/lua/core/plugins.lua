@@ -109,7 +109,7 @@ return packer.startup(function(use)
 	use {
 		"wfxr/minimap.vim",
 		config = function()
-			vim.g.minimap_width = 20
+			vim.g.minimap_width = 12
 			vim.g.minimap_auto_start = 1
 		end,
 	}
@@ -219,7 +219,15 @@ return packer.startup(function(use)
         end
     }
 
-	use("sidebar-nvim/sidebar.nvim")
+	use { 
+        "sidebar-nvim/sidebar.nvim",
+        config = function ()
+            require('sidebar-nvim').setup({
+                initial_width = 50,
+                sections = { "git", "symbols" },
+            });
+        end
+    }
 	use("christoomey/vim-tmux-navigator")
 
 	-- dap stuffs

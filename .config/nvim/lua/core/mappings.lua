@@ -124,6 +124,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("i", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<C-f>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts) --use telescope for lsp references
 
 -- git telescope
@@ -162,3 +163,7 @@ keymap("n", " ri", "<cmd>RunCurrentIntegrationTest<CR>", opts);
 keymap("n", " rT", "<cmd>RunCurrentTestWithOutput<CR>", opts);
 keymap("n", " rI", "<cmd>RunCurrentIntegrationTestWithOutput<CR>", opts);
 keymap("n", "<Leader>o", "<cmd>OverseerToggle<CR>", opts);
+
+keymap("n", "<Leader>g", "<cmd>lua require('core.utils').toggle_sidebar()<CR>", opts);
+
+

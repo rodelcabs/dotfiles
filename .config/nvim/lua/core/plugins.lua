@@ -109,8 +109,8 @@ return packer.startup(function(use)
 	use {
 		"wfxr/minimap.vim",
 		config = function()
-			vim.g.minimap_width = 12
-			vim.g.minimap_auto_start = 1
+			-- vim.g.minimap_width = 12
+			-- vim.g.minimap_auto_start = 1
 		end,
 	}
     --
@@ -219,7 +219,7 @@ return packer.startup(function(use)
         end
     }
 
-	use { 
+	use {
         "sidebar-nvim/sidebar.nvim",
         config = function ()
             require('sidebar-nvim').setup({
@@ -233,7 +233,7 @@ return packer.startup(function(use)
 	-- dap stuffs
 	use({ "mfussenegger/nvim-dap" })
 	use({ "mxsdev/nvim-dap-vscode-js" })
-	use { 
+	use {
         "rcarriga/nvim-dap-ui",
         config = function ()
             require('core.configs.dap.javascript').setup();
@@ -241,7 +241,7 @@ return packer.startup(function(use)
         end
     }
 
-	use{ 
+	use{
         "stevearc/overseer.nvim",
         config = function ()
             require('core.configs.overseer');
@@ -255,6 +255,27 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+    use({
+      "folke/which-key.nvim",
+      config = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+        require("which-key").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+            window = {
+                border = "single",
+                margin = { 1, 1, 1, 1 },
+                padding = { 1, 2, 1, 2 },
+            },
+            layout = {
+                spacing = 5,
+                align = 'center'
+            }
+        }
+      end
+    })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

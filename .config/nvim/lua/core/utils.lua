@@ -12,4 +12,9 @@ M.toggle_sidebar = function ()
     require('sidebar-nvim').toggle()
 end
 
+-- ENV FOR TESTING USING OVERSEER
+M.testCommandEnvironment = {
+    BG_RUN_INTEGRATION_TESTS=true
+};
+
 return M

@@ -1,5 +1,7 @@
 local overseer = require('overseer')
 local nvimNotify = require('notify');
+local utils = require('core.utils');
+local testEnvVars = utils.testCommandEnvironment;
 
 overseer.setup({
     templates = {
@@ -35,13 +37,12 @@ local runNearestTest = function (showOutput, integration)
         local title = "Run: " .. nearestTest;
         local env = {};
 
+        nvimNotify(" Running..", "info", {title = title});
         if integration then
-            env = {
-                BG_RUN_INTEGRATION_TESTS = 'true'
-            };
+            env = testEnvVars;
+            print('integration test enabled..')
         end
 
-        nvimNotify(" Running..", "info", {title = title});
         overseer.run_template({ name = "run current test (mocha)", env = env }, function(task)
             if task and showOutput then
                 local main_win = vim.api.nvim_get_current_win()

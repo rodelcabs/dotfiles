@@ -125,7 +125,7 @@ keymap("n", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('t
 keymap("i", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<C-f>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
-keymap("n", "gr", "<cmd>Telescope lsp_references<cr>", opts) --use telescope for lsp references
+keymap("n", "gr", "<cmd> lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor())<cr>", opts) --use telescope for lsp references
 
 -- git telescope
 keymap("n", "<leader>gt", "<cmd>Telescope git_status<cr>", opts) --gt status

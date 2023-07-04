@@ -40,7 +40,7 @@ telescope.setup {
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "node_modules" },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-    path_display = { "truncate" },
+    path_display = { "tail" },
     winblend = 0,
     border = {},
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
@@ -68,7 +68,8 @@ telescope.setup {
       previewer = false
     },
     git_status = {
-      initial_mode="normal"
+      initial_mode="normal",
+      path_display={'tail'}
     },
     git_stash = {
       initial_mode="normal"
@@ -77,7 +78,8 @@ telescope.setup {
       initial_mode="normal"
     },
     lsp_references = {
-      initial_mode="normal"
+      initial_mode="normal",
+      path_display={'tail'}
     },
     oldfiles = {
       initial_mode="normal"

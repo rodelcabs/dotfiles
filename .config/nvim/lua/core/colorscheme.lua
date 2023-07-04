@@ -1,14 +1,10 @@
-require('nightly').setup({
-    transparent = true
-});
-
 vim.opt.fillchars = {
     eob = ' ',
 }
 
 vim.cmd[[
 try
-  colorscheme nightly
+  colorscheme darkplus
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

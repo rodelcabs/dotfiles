@@ -5,12 +5,12 @@ end
 
 gitsigns.setup {
   signs = {
-    add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
-    change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
-    delete = { hl = "DiffDelete", text = "󰍵", numhl = "GitSignsDeleteNr" },
-    topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
-    changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
-    untracked = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+    add = { text = "▐", numhl = "GitSignsAddNr", guibg="#2da042" },
+    change = { text = "▐", numhl = "GitSignsChangeNr", guibg="#0077d2" },
+    delete = { text = "󰍵", numhl = "GitSignsDeleteNr", guibg="#f85249" },
+    topdelete = { text = "‾", numhl = "GitSignsDeleteNr", guibg="#f85249" },
+    changedelete = { text = "~", numhl = "GitSignsChangeNr", guibg="#0077d2" },
+    untracked = { text = "▐", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn", guibg="#2da042" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`

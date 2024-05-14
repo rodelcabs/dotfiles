@@ -45,7 +45,7 @@ M.mode = {
     return mode_names[mode_name]
     -- return icons[12]
   end,
-  separator = { left = " ", right = "" },
+  separator = { left = " ", right = " " },
   color = function()
     return { bg = mode_color[vim.api.nvim_get_mode().mode], fg = "Black" }
   end,
@@ -170,7 +170,7 @@ M.total_lines = {
   function()
     return "%L"
   end,
-  separator = { left = "", right = " " },
+  separator = { left = "", right = " " },
   color = function()
     return { bg = mode_color[vim.api.nvim_get_mode().mode], fg = "Black" }
   end,

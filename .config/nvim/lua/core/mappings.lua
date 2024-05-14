@@ -68,7 +68,7 @@ keymap("n", "<leader><S-v>", "<cmd>topleft vnew<cr>", opts)
 --new window horizontal
 keymap("n", "<leader>h", "<C-w>s", opts)
 
-keymap("n", "<C-n>", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<C-n>", ":lua require('nvim-tree.api').tree.toggle()<cr>", opts)
 
 -- git signs
 keymap("n", "gh", "<cmd>Gitsigns next_hunk<cr>", opts)
@@ -125,7 +125,7 @@ keymap("n", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('t
 keymap("i", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<C-f>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>fo", "<cmd>Telescope oldfiles<cr>", opts)
-keymap("n", "gr", "<cmd> lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor())<cr>", opts) --use telescope for lsp references
+keymap("n", "gr", "<cmd> lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor({layout_config = {width = 0.75, height = 0.20}}))<cr>", opts) --use telescope for lsp references
 
 -- git telescope
 keymap("n", "<leader>gt", "<cmd>Telescope git_status<cr>", opts) --gt status

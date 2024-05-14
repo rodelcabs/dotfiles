@@ -134,13 +134,13 @@ cmp.setup {
     select = false,
   },
   window = {
-    -- completion = {
-    --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    --   winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-    -- },
-    -- documentation = {
-    --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    -- },
+    completion = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
   },
   experimental = {
     ghost_text = false,

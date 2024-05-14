@@ -2,13 +2,6 @@ local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 nvim_tree.ignore_ft_on_setup = {
     "startify",
     "dashboard",
@@ -57,9 +50,9 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 40,
+    width = 37,
     -- height = 30, nvim tree update 
-    hide_root_folder = false,
+    -- hide_root_folder = false,
     side = "left",
     -- auto_resize = true,
     -- mappings = {

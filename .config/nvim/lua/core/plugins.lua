@@ -74,7 +74,7 @@ return packer.startup(function(use)
         end
 	}
 
-	use{
+	use {
         "lukas-reineke/indent-blankline.nvim",
         config = function ()
             require('core.configs.indentline');
@@ -131,6 +131,25 @@ return packer.startup(function(use)
 	use({ "Alexis12119/nightly.nvim" })
 	use("xiyaowong/nvim-transparent")
 	use("ryanoasis/vim-devicons")
+    use("AlexvZyl/nordic.nvim")
+    use("Abstract-IDE/Abstract-cs")
+    use('NLKNguyen/papercolor-theme')
+    use { 'talha-akram/noctis.nvim' }
+    use {
+      "craftzdog/solarized-osaka.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    }
+    use {
+        'projekt0n/github-nvim-theme',
+        config = function ()
+            vim.cmd([[
+                hi NvimTreeNormal guibg='#07090c'
+                hi CursorLine guibg='#171b22'
+            ]])
+        end
+    }
 
     -- CMP struffs
 	use{
@@ -161,6 +180,31 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("RRethy/vim-illuminate")
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig",
+        config = function ()
+            local navic = require("nvim-navic")
+            require("lspconfig").clangd.setup {
+                on_attach = function(client, bufnr)
+                    navic.attach(client, bufnr)
+                end
+            }
+        end
+    }
+    use {
+        'utilyre/barbecue.nvim',
+        name = 'barbecue',
+        event = 'BufReadPre',
+        version = '*',
+        dependencies = {
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons',
+        },
+        opts = {
+            attach_navic = false,
+        },
+    }
 
 	use {
         "jose-elias-alvarez/null-ls.nvim",
@@ -247,14 +291,14 @@ return packer.startup(function(use)
             require('core.configs.overseer');
         end
     }
-	use({
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				background_colour = "#141b1e",
-			})
-		end,
-	})
+	-- use({
+	-- 	"rcarriga/nvim-notify",
+	-- 	config = function()
+	-- 		require("notify").setup({
+	-- 			background_colour = "#141b1e",
+	-- 		})
+	-- 	end,
+	-- })
     use({
       "folke/which-key.nvim",
       config = function()

@@ -1,5 +1,5 @@
 local overseer = require('overseer')
-local nvimNotify = require('notify');
+-- local nvimNotify = require('notify');
 local utils = require('core.utils');
 local testEnvVars = utils.testCommandEnvironment;
 
@@ -37,26 +37,27 @@ local runNearestTest = function (showOutput, integration)
         local title = "Run: " .. nearestTest;
         local env = {};
 
-        nvimNotify(" Running..", "info", {title = title});
+        print(title);
         if integration then
             env = testEnvVars;
-            print('integration test enabled..')
+            -- print('integration test enabled..')
         end
 
         overseer.run_template({ name = "run current test (mocha)", env = env }, function(task)
             if task and showOutput then
                 local main_win = vim.api.nvim_get_current_win()
                 overseer.run_action(task, "open hsplit")
-                vim.api.nvim_set_current_win(main_win)
+                vim.cmd(":$")
+                -- vim.api.nvim_set_current_win(main_win)
             end
         end)
     else
-        nvimNotify(" No Test Found", vim.log.levels.WARN, {title = "Run Current Test"});
+        print(" No Test Found <CR>");
     end
 end
 
 --temporary 
-vim.notify = nvimNotify;
+-- vim.notify = nvimNotify;
 vim.api.nvim_create_user_command("RunCurrentTest", function ()
     runNearestTest()
 end, {});

@@ -137,7 +137,7 @@ keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts) -- git commits
 keymap("n", "<C-s>", "<cmd>SymbolsOutline<cr>", opts)
 
 --sidebar
-keymap("n", "<C-x>", "<cmd>SidebarNvimToggle<cr>", opts)
+-- keymap("n", "<C-x>", "<cmd>SidebarNvimToggle<cr>", opts)
 
 keymap("n", "<leader>b", "<cmd> lua require 'dap'.toggle_breakpoint(); <CR>", opts)
 keymap("n", "<leader>db",  "<cmd> lua require 'dapui'.toggle(); <CR>", opts)

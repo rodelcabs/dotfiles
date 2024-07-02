@@ -18,6 +18,7 @@ local on_attach = function(bufnr)
   vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
   vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
+  vim.keymap.set('n', '<C-b>', ':NvimTreeFocus <CR>')
 end
 
 nvim_tree.setup {
@@ -73,9 +74,9 @@ nvim_tree.setup {
   renderer = {
       highlight_git = true,
       highlight_opened_files = "none",
-
+      indent_width=2,
       indent_markers = {
-         enable = true,
+         enable = false,
       },
 
       icons = {

@@ -17,46 +17,46 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Namespace = "󰌗",
-  Text = "󰉿",
-  Method = "󰆧",
-  Function = "󰆧",
-  Constructor = "",
-  Field = "󰜢",
-  Variable = "󰀫",
-  Class = "󰠱",
-  Interface = "",
-  Module = "",
-  Property = "󰜢",
-  Unit = "󰑭",
-  Value = "󰎠",
-  Enum = "",
-  Keyword = "󰌋",
-  Snippet = "",
-  Color = "󰏘",
-  File = "󰈚",
-  Reference = "󰈇",
-  Folder = "󰉋",
-  EnumMember = "",
-  Constant = "󰏿",
-  Struct = "󰙅",
-  Event = "",
-  Operator = "󰆕",
-  TypeParameter = "󰊄",
-  Table = "",
-  Object = "󰅩",
-  Tag = "",
-  Array = "[]",
-  Boolean = "",
-  Number = "",
-  Null = "󰟢",
-  String = "󰉿",
-  Calendar = "",
-  Watch = "󰥔",
-  Package = "",
-  Copilot = "",
-  Codeium = "",
-  TabNine = "",
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
+  Namespace = " 󰌗 ",
+  Table = "  ",
+  Object = " 󰅩 ",
+  Tag = "  ",
+  Array = " [] ",
+  Boolean = "  ",
+  Number = "  ",
+  Null = " 󰟢 ",
+  String = " 󰉿 ",
+  Calendar = "  ",
+  Watch = " 󰥔 ",
+  Package = "  ",
+  Copilot = "  ",
+  Codeium = "  ",
+  TabNine = "  ",
 }-- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
@@ -135,15 +135,26 @@ cmp.setup {
   },
   window = {
     completion = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+        col_offset = (-3),
+        side_padding = 0,
+        winhighlight = "Normal:NormalFloat,NormalFloat:Pmenu,Pmenu:NormalFloat"
     },
+      -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        border = 'solid'
     },
+      -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    -- diagnostic = {
+    --
+    -- }
+  },
+  view = {
+    entries = {
+      name = "custom",
+      selection_order = "near_cursor"
+    }
   },
   experimental = {
-    ghost_text = false,
-    native_menu = false,
+    ghost_text = true
   },
 }

@@ -74,12 +74,12 @@ return packer.startup(function(use)
         end
 	}
 
-	use {
-        "lukas-reineke/indent-blankline.nvim",
-        config = function ()
-            require('core.configs.indentline');
-        end
-    }
+	-- use {
+ --        "lukas-reineke/indent-blankline.nvim",
+ --        config = function ()
+ --            require('core.configs.indentline');
+ --        end
+ --    }
 
 	use {
         "kyazdani42/nvim-tree.lua",
@@ -116,6 +116,7 @@ return packer.startup(function(use)
     --
 	-- Colorschemes
 	use("overcache/NeoSolarized")
+	use("EdenEast/nightfox.nvim")
 	use("robertmeta/nofrils")
 	use("bluz71/vim-moonfly-colors")
 	use("ayu-theme/ayu-vim")
@@ -143,12 +144,6 @@ return packer.startup(function(use)
     }
     use {
         'projekt0n/github-nvim-theme',
-        config = function ()
-            vim.cmd([[
-                hi NvimTreeNormal guibg='#07090c'
-                hi CursorLine guibg='#171b22'
-            ]])
-        end
     }
 
     -- CMP struffs
@@ -192,6 +187,12 @@ return packer.startup(function(use)
             }
         end
     }
+    
+    use {
+        "folke/trouble.nvim",
+         dependencies = { "nvim-tree/nvim-web-devicons" }
+    }
+
     use {
         'utilyre/barbecue.nvim',
         name = 'barbecue',
@@ -275,6 +276,7 @@ return packer.startup(function(use)
 	use("christoomey/vim-tmux-navigator")
 
 	-- dap stuffs
+	use({ "nvim-neotest/nvim-nio" })
 	use({ "mfussenegger/nvim-dap" })
 	use({ "mxsdev/nvim-dap-vscode-js" })
 	use {
@@ -284,6 +286,8 @@ return packer.startup(function(use)
             require('core.configs.dap').setup();
         end
     }
+
+    use {"rktjmp/hotpot.nvim"}
 
 	use{
         "stevearc/overseer.nvim",

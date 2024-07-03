@@ -5,48 +5,47 @@
       "alignment": "left",
       "segments": [
         {
+          "background": "#61AFEF",
           "foreground": "#ffffff",
-          "style": "plain",
-          "template": "<#C591E8>\u276f</><#69FF94>\u276f</>",
-          "type": "text"
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": " rods ",
+          "trailing_diamond": "\ue0b0",
+          "type": "session"
         },
         {
-          "foreground": "#56B6C2",
+          "background": "#C678DD",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "properties": {
             "style": "folder"
           },
-          "style": "plain",
+          "style": "powerline",
           "template": " {{ .Path }} ",
           "type": "path"
         },
         {
-          "foreground": "#D0666F",
-          "properties": {
-            "branch_icon": "",
-            "fetch_status": false
-          },
-          "style": "plain",
-          "template": "<#5FAAE8>git:(</>{{ .HEAD }}<#5FAAE8>)</>",
+          "background": "#95ffa4",
+          "foreground": "#193549",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .HEAD }} ",
           "type": "git"
         },
         {
-          "foreground": "#DCB977",
-          "style": "plain",
-          "template": " \uf119",
-          "type": "status"
-        },
-        {
-          "foreground": "#66F68F",
-          "properties": {
-            "time_format": "15:04"
-          },
-          "style": "plain",
-          "template": " {{ .CurrentDate | date .Format }} ",
-          "type": "time"
+          "background": "#FF6471",
+          "foreground": "#ffffff",
+          "leading_diamond": "<transparent,background>\ue0b0</>",
+          "style": "diamond",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "python"
         }
       ],
       "type": "prompt"
     }
   ],
+  "final_space": true,
   "version": 2
 }
+

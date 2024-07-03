@@ -1,9 +1,8 @@
 [user]
-	name = Rodel Cabubas
+	name = rodel.cabubas
 	email = rodel.cabubas@asurion.com
-	signingkey = 0EE4C2F5BCABB592
+	signingkey = 3C50291F66C2F08B
 [credential]
-	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 
 [alias]
@@ -23,3 +22,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[gpg]
+	program = /opt/homebrew/bin/gpg

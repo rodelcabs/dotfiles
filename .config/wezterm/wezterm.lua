@@ -6,13 +6,16 @@ local config = {}
 if wezterm.config_builder then config = wezterm.config_builder() end
 
 
-config.color_scheme = "Oxocarbon Dark"
+config.color_scheme = "Nordic"
+config.colors = {
+    background = "#1b1f27"
+}
 config.font = wezterm.font_with_fallback({
-      { family = "Monaco Nerd Font", weight = "Medium" },
+      { family = "JetBrainsMono Nerd Font", weight = "Medium" },
 })
-config.font_size = 12.9;
+config.font_size = 13;
 -- config.window_background_opacity = 0.9
--- config.macos_window_background_blur = 30
+config.macos_window_background_blur = 50
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
@@ -176,13 +179,28 @@ wezterm.on("update-status", function(window, pane)
   }))
 end)
 
-config.window_padding = {
-  left = '25px',
-  right = '23px',
-  bottom = '20px',
-  top = "30px"
-
+local padding = {
+    left = '1cell',
+    right = '0.5cell',
+    top = '0.5cell',
+    bottom = '0',
 }
+
+wezterm.on('update-status', function(window, pane)
+    local overrides = window:get_config_overrides() or {}
+    if string.find(pane:get_title(), '^n-vi-m-.*') then
+        overrides.window_padding = {
+            left = 0,
+            right = 0,
+            top = 0,
+            bottom = 0
+        }
+    else
+        overrides.window_padding = padding
+    end
+    window:set_config_overrides(overrides)
+end)
+
 --[[ Appearance setting for when I need to take pretty screenshots
 config.enable_tab_bar = false
 --]]

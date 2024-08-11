@@ -5,47 +5,54 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#61AFEF",
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
-          "style": "diamond",
-          "template": " rods ",
-          "trailing_diamond": "\ue0b0",
+          "foreground": "#45F1C2",
+          "style": "plain",
+          "template": "\ueb99 {{ .UserName }} on",
           "type": "session"
         },
         {
-          "background": "#C678DD",
-          "foreground": "#ffffff",
-          "powerline_symbol": "\ue0b0",
+          "foreground": "#0CA0D8",
           "properties": {
+            "folder_separator_icon": "/",
             "style": "folder"
           },
-          "style": "powerline",
-          "template": " {{ .Path }} ",
+          "style": "plain",
+          "template": " \uf07b {{ .Path }} ",
           "type": "path"
         },
         {
-          "background": "#95ffa4",
-          "foreground": "#193549",
+          "foreground": "#14A5AE",
           "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "template": " {{ .HEAD }} ",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#cd5e42",
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
         },
         {
-          "background": "#FF6471",
-          "foreground": "#ffffff",
-          "leading_diamond": "<transparent,background>\ue0b0</>",
-          "style": "diamond",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "\ue0b4",
-          "type": "python"
+          "foreground": "#CD4277",
+          "style": "plain",
+          "template": "# ",
+          "type": "text"
         }
       ],
       "type": "prompt"
     }
   ],
-  "final_space": true,
   "version": 2
 }
-

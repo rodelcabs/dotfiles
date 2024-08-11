@@ -1,10 +1,7 @@
 [user]
 	name = rodel.cabubas
 	email = rodel.cabubas@asurion.com
-	signingkey = 3C50291F66C2F08B
-[credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
-
+	signingkey = 84B400B901342BE4
 [alias]
   st = status
   p = push -u origin HEAD
@@ -26,3 +23,6 @@
 	useHttpPath = true
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager

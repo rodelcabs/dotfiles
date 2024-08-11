@@ -4,13 +4,13 @@ return {
     close_command = ":Bdelete!",
     right_mouse_command = ":Bdelete!",
     offsets = {
-      { filetype = "NvimTree", text = "File Explorer", highlight = "Directory", padding = 1 },
+      { filetype = "NvimTree", text = " ", highlight = "Directory", padding = 1, text_align = "left" },
       { filetype = "lspsagaoutline", text = "Code Outline", highlight = "Directory", padding = 1 },
     },
     indicator = {
         icon = '|'
     },
-    always_show_bufferline = false,
+    always_show_bufferline = true,
     buffer_close_icon = "✕",
     modified_icon = "●",
     close_icon = "",
@@ -32,6 +32,6 @@ return {
     indicator_selected = {
         fg = '#f78166',
         -- bg = '#f78166',
-    }
+    },
   },
 }

@@ -74,12 +74,12 @@ return packer.startup(function(use)
         end
 	}
 
-	-- use {
- --        "lukas-reineke/indent-blankline.nvim",
- --        config = function ()
- --            require('core.configs.indentline');
- --        end
- --    }
+	use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function ()
+            require('core.configs.indentline');
+        end
+    }
 
 	use {
         "kyazdani42/nvim-tree.lua",
@@ -140,7 +140,11 @@ return packer.startup(function(use)
       "craftzdog/solarized-osaka.nvim",
       lazy = false,
       priority = 1000,
-      opts = {},
+      opts = function ()
+        return {
+          transparent = true
+        }
+      end
     }
     use {
         'projekt0n/github-nvim-theme',
@@ -214,7 +218,7 @@ return packer.startup(function(use)
         end
     }
 
-	use{ 
+	use{
         "j-hui/fidget.nvim",
         config = function ()
             require('fidget').setup{};
@@ -275,7 +279,7 @@ return packer.startup(function(use)
     }
 	use("christoomey/vim-tmux-navigator")
 
-	-- dap stuffs
+	-- dap stuff
 	use({ "nvim-neotest/nvim-nio" })
 	use({ "mfussenegger/nvim-dap" })
 	use({ "mxsdev/nvim-dap-vscode-js" })
@@ -312,7 +316,7 @@ return packer.startup(function(use)
           -- your configuration comes here
           -- or leave it empty to use the default settings
           -- refer to the configuration section below
-            window = {
+            win = {
                 border = "single",
                 margin = { 1, 1, 1, 1 },
                 padding = { 1, 2, 1, 2 },

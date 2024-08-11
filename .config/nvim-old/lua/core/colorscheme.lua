@@ -7,25 +7,8 @@ vim.opt.fillchars = {
     eob = ' ',
 }
 
--- vim.cmd[[
--- try
---   colorscheme oxacarbon
---   " set fillchars+=vert:\|
---   hi VertSplit ctermbg=NONE guibg=NONE guifg=#2D505E
---   catch /^Vim\%((\a\+)\)\=:E185/
---   set background=dark
--- endtry
--- ]]
-
--- keep gitsigns diff colors
--- vim.cmd [[
---     hi GitSignsAdd guifg='#2da042'
---     hi GitSignsChange guifg='#0077d2'
---     hi GitSignsDelete guifg='#f85249'
--- ]]
---
-
-vim.cmd("colorscheme carbonfox")
+-- vim.cmd("colorscheme carbonfox")
+vim.cmd("colorscheme nordic")
 vim.cmd("set showtabline=0")
 vim.cmd(':set winhighlight ='..cmp.config.window.bordered().winhighlight);
 
@@ -304,17 +287,17 @@ vim.api.nvim_set_hl(0, "WinSeparator", {fg = "#262626", bg = oxocarbon.none })
 -- vim.api.nvim_set_hl(0, "StatusCommand", {fg = oxocarbon.base00, bg = oxocarbon.base13})
 -- vim.api.nvim_set_hl(0, "StatusLineDiagnosticWarn", {fg = oxocarbon.base14, bg = oxocarbon.base00, bold = true})
 -- vim.api.nvim_set_hl(0, "StatusLineDiagnosticError", {fg = oxocarbon.base10, bg = oxocarbon.base00, bold = true})
-vim.api.nvim_set_hl(0, "TelescopeBorder", {fg = oxocarbon.blend, bg = oxocarbon.blend})
-vim.api.nvim_set_hl(0, "TelescopePromptBorder", {fg = oxocarbon.base02, bg = oxocarbon.base02})
-vim.api.nvim_set_hl(0, "TelescopePromptNormal", {fg = oxocarbon.base05, bg = oxocarbon.base02})
-vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {fg = oxocarbon.base08, bg = oxocarbon.base02})
-vim.api.nvim_set_hl(0, "TelescopeNormal", {fg = oxocarbon.none, bg = oxocarbon.blend})
-vim.api.nvim_set_hl(0, "TelescopePreviewTitle", {fg = oxocarbon.base02, bg = oxocarbon.base12})
-vim.api.nvim_set_hl(0, "TelescopePromptTitle", {fg = oxocarbon.base02, bg = oxocarbon.base11})
-vim.api.nvim_set_hl(0, "TelescopeResultsTitle", {fg = oxocarbon.blend, bg = oxocarbon.blend})
-vim.api.nvim_set_hl(0, "TelescopeSelection", {fg = oxocarbon.none, bg = oxocarbon.base02})
-vim.api.nvim_set_hl(0, "TelescopePreviewLine", {fg = oxocarbon.none, bg = oxocarbon.base01})
-vim.api.nvim_set_hl(0, "TelescopeMatching", {fg = oxocarbon.base08, bg = oxocarbon.none, bold = true, italic = true})
+-- vim.api.nvim_set_hl(0, "TelescopeBorder", {fg = oxocarbon.blend, bg = oxocarbon.blend})
+-- vim.api.nvim_set_hl(0, "TelescopePromptBorder", {fg = oxocarbon.base02, bg = oxocarbon.base02})
+-- vim.api.nvim_set_hl(0, "TelescopePromptNormal", {fg = oxocarbon.base05, bg = oxocarbon.base02})
+-- vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {fg = oxocarbon.base08, bg = oxocarbon.base02})
+-- vim.api.nvim_set_hl(0, "TelescopeNormal", {fg = oxocarbon.none, bg = oxocarbon.blend})
+-- vim.api.nvim_set_hl(0, "TelescopePreviewTitle", {fg = oxocarbon.base02, bg = oxocarbon.base12})
+-- vim.api.nvim_set_hl(0, "TelescopePromptTitle", {fg = oxocarbon.base02, bg = oxocarbon.base11})
+-- vim.api.nvim_set_hl(0, "TelescopeResultsTitle", {fg = oxocarbon.blend, bg = oxocarbon.blend})
+-- vim.api.nvim_set_hl(0, "TelescopeSelection", {fg = oxocarbon.none, bg = oxocarbon.base02})
+-- vim.api.nvim_set_hl(0, "TelescopePreviewLine", {fg = oxocarbon.none, bg = oxocarbon.base01})
+-- vim.api.nvim_set_hl(0, "TelescopeMatching", {fg = oxocarbon.base08, bg = oxocarbon.none, bold = true, italic = true})
 -- vim.api.nvim_set_hl(0, "NotifyERRORBorder", {fg = oxocarbon.base08, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NotifyWARNBorder", {fg = oxocarbon.base14, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NotifyINFOBorder", {fg = oxocarbon.base05, bg = oxocarbon.none})
@@ -367,7 +350,7 @@ vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", {fg = oxocarbon.base01, bg = oxo
 -- vim.api.nvim_set_hl(0, "NvimTreeIndentMarker", {fg = oxocarbon.base02, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NvimTreeEmptyFolderName", {fg = oxocarbon.base15, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", {fg = oxocarbon.base15, bg = oxocarbon.none})
-vim.api.nvim_set_hl(0, "NvimTreeNormal", {fg = oxocarbon.base06, bg = oxocarbon.none})
+--vim.api.nvim_set_hl(0, "NvimTreeNormal", {fg = oxocarbon.base06, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NeogitBranch", {fg = oxocarbon.base10, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NeogitRemote", {fg = oxocarbon.base09, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "NeogitHunkHeader", {fg = oxocarbon.base04, bg = oxocarbon.base02})
@@ -381,12 +364,12 @@ vim.api.nvim_set_hl(0, "NvimTreeNormal", {fg = oxocarbon.base06, bg = oxocarbon.
 -- vim.api.nvim_set_hl(0, "alpha2", {fg = oxocarbon.base04, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "alpha3", {fg = oxocarbon.base03, bg = oxocarbon.none})
 -- vim.api.nvim_set_hl(0, "CodeBlock", {fg = oxocarbon.none, bg = oxocarbon.base01})
-vim.api.nvim_set_hl(0, "BufferLineFill", { bg = oxocarbon.base00})
-vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = oxocarbon.base00})
-vim.api.nvim_set_hl(0, "BufferLineCloseButton", { bg = oxocarbon.base00})
-vim.api.nvim_set_hl(0, "BufferLineCloseButtonSelected", { bg = oxocarbon.base00})
-vim.api.nvim_set_hl(0, "BufferLineDevIconDefault", { bg = oxocarbon.base00})
-vim.api.nvim_set_hl(0, "BufferLineDevIconDefaultSelected", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineFill", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineCloseButton", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineCloseButtonSelected", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineDevIconDefault", { bg = oxocarbon.base00})
+-- vim.api.nvim_set_hl(0, "BufferLineDevIconDefaultSelected", { bg = oxocarbon.base00})
 -- vim.api.nvim_set_hl(0, "BufferLineDiagnostic", {fg = oxocarbon.base10, bg = oxocarbon.none, bold = true})
 -- vim.api.nvim_set_hl(0, "BufferLineDiagnosticVisible", {fg = oxocarbon.base10, bg = oxocarbon.none, bold = true})
 -- vim.api.nvim_set_hl(0, "htmlH1", {link = "markdownH1"})

@@ -15,6 +15,28 @@
 .zsh_sessions
 .zshrc
 .lesshst
+.viminfo
+.node_repl_history
+.ts_node_repl_history
+*.csv
+.nvm
+.npmrc
+
+upload.sh
+aws.jar
+install.log
+
+.aws/
+.browserstack
+.dbclient/
+.docker/
+.gk/
+.gnupg/
+.vim/
+.vscode-oss/
+temp/
+
+
 Desktop/
 Documents/
 Downloads/
@@ -34,5 +56,10 @@ omp.cache
 .config/configstore
 .config/dap
 .config/htop
-.config/nyoom
+.config/neofetch
+.config/configstore
+.config/raycast
+.config/spicetify
 
+# nvchad
+# nvchad

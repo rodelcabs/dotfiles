@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   'cssls',
   'html',
-  'tsserver',
+  'ts_ls',
   'pyright',
   'bashls',
   'jsonls',
@@ -36,9 +36,9 @@ local on_attach = function(_, bufnr)
 
   map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
 
-  map("n", "<leader>ra", function()
-    require "nvchad.lsp.renamer"()
-  end, opts "NvRenamer")
+  -- map("n", "<leader>rn", function()
+  --   require "nvchad.lsp.renamer"()
+  -- end, opts "NvRenamer")
 
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
   map("n", "gr", "<cmd> lua require'telescope.builtin'.lsp_references(require('telescope.themes').get_cursor({layout_config = {width = 0.75, height = 0.20}}))<cr>", opts "show references")

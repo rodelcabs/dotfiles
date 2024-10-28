@@ -23,23 +23,23 @@ return {
       "TmuxNavigatePrevious",
     }
   },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   event = "User FilePost",
+  --   config = function()
+  --     require("ibl").setup({
+  --       enabled = false
+  --     })
+  --   end,
+  -- },
 
   {
     "kyazdani42/nvim-tree.lua",
     opts = function ()
       local config = require("nvchad.configs.nvimtree")
+      local customConfig = require('configs.settings').nvimtree
 
-      config.on_attach = function (bufnr)
-        local api = require("nvim-tree.api")
-        local function opts(desc)
-          return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-        end
-        vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
-        vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
-        vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
-        vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
-        vim.keymap.set('n', '<C-b>', ':NvimTreeFocus <CR>')
-      end
+      for k,v in pairs(customConfig) do config[k] = v end
 
       return config
     end
@@ -49,39 +49,31 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = function ()
       local config = require("nvchad.configs.telescope")
+      local customConfig = require('configs.settings').telescope
 
-      config.pickers = {
-        git_branches = {
-          initial_mode="normal",
-          previewer = false
-        },
-        git_status = {
-          initial_mode="normal",
-          path_display={'tail'}
-        },
-        git_stash = {
-          initial_mode="normal"
-        },
-        git_commits = {
-          initial_mode="normal"
-        },
-        lsp_references = {
-          initial_mode="normal",
-          path_display={'tail'}
-        },
-        oldfiles = {
-          initial_mode="normal"
-        }
-      }
+      for k,v in pairs(customConfig) do config[k] = v end
 
       return config
     end
   },
 
   {
-    'linrongbin16/lsp-progress.nvim',
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = function()
+        return require('configs.settings').noice
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
+
+  {
+    "smjonas/inc-rename.nvim",
+    event = "VeryLazy",
     config = function()
-      require('lsp-progress').setup()
-    end
+      require("inc_rename").setup()
+    end,
   }
 }

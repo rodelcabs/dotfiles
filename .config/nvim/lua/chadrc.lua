@@ -5,19 +5,38 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "decay",
+    theme_toggle = { "decay", "ayu_light" },
+    transparency = true
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
-    changed_themes = {
-        onedark = {
-            base_30 = {
-                black = '#1E2127'
-            }
-        }
+}
+
+
+M.ui = {
+    statusline = {
+        theme = "minimal",
+        separator_style = "block"
+    },
+}
+
+M.nvdash = {
+    load_on_startup = true,
+    header = {
+        "       __               _               ",
+        "      / /_  ____  _____(_)___  ____ _   ",
+        "     / __ \\/ __ \\/ ___/ / __ \\/ __ `/   ",
+        "    / /_/ / /_/ / /  / / / / / /_/ /    ",
+        "   /_.___/\\____/_/  /_/_/ /_/\\__, /     ",
+        "                              /____/         ",
+        "                                        ",
+        "                                        ",
+        "                                        ",
+        "                                        ",
     }
+}
+
+M.lsp = {
+    signature = false
 }
 
 return M

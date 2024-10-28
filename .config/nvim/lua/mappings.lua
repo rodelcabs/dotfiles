@@ -17,7 +17,6 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
-
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { silent = true })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { silent = true })
 map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { silent = true })
@@ -26,9 +25,11 @@ map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { silent = true })
 
 --new window vertical
 map("n", "<leader>v", "<C-w>v")
-map("n", "<leader><S-v>", "<cmd>topleft vnew<cr>")
 --window horizontal
 map("n", "<leader>h", "<C-w>s")
+
+-- renamer
+map("n", "<leader>rn", ":IncRename ", { silent = true })
 
 --telescope
 map("n", "<C-p>", "<cmd> lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>")
@@ -52,4 +53,22 @@ map("n", "gh", "<cmd>Gitsigns next_hunk<cr>", opts)
 map("n", "gH", "<cmd>Gitsigns prev_hunk<cr>", opts)
 map("n", "gp", "<cmd>Gitsigns preview_hunk<cr>", opts)
 map("n", "gw", "<cmd>Gitsigns toggle_current_line_blame<cr>", opts)
+
+-- remove mapping copying the whole file
+map("n", "<C-c>", "")
+
+--terminal
+map("t", "<ESC>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" });
+map("t", "<C-h>", "<C-\\><C-N><C-w>h")
+map("t", "<C-j>", "<C-\\><C-N><C-w>j")
+map("t", "<C-k>", "<C-\\><C-N><C-w>k")
+map("t", "<C-l>", "<C-\\><C-N><C-w>l")
+-- new terminals
+map("n", "<leader><S-h>", function()
+  require("nvchad.term").new { pos = "sp" }
+end, opts)
+
+map("n", "<leader><S-v>", function()
+  require("nvchad.term").new { pos = "vsp", size = 0.35 }
+end, opts)
 

@@ -7,7 +7,7 @@
         {
           "foreground": "#45F1C2",
           "style": "plain",
-          "template": "\ueb99 {{ .UserName }} on",
+          "template": "\ueb99{{if eq .UserName \"rodel.cabubas\" }} rods {{else}} {{ .UserName }} {{end}}",
           "type": "session"
         },
         {
@@ -17,7 +17,7 @@
             "style": "folder"
           },
           "style": "plain",
-          "template": " \uf07b {{ .Path }} ",
+          "template": "\uf07b {{ .Path }} ",
           "type": "path"
         },
         {
@@ -28,7 +28,7 @@
             "fetch_upstream_icon": true
           },
           "style": "plain",
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": "{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}",
           "type": "git"
         }
       ],
@@ -39,15 +39,9 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#cd5e42",
-          "style": "plain",
-          "template": "\ue3bf ",
-          "type": "root"
-        },
-        {
           "foreground": "#CD4277",
           "style": "plain",
-          "template": "# ",
+          "template": "<b>›_</b> ",
           "type": "text"
         }
       ],

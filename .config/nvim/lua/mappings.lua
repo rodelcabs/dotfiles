@@ -12,10 +12,10 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- window navigation
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
+map({"n", "v"}, "<C-h>", "<C-w>h", opts)
+map({"n", "v"}, "<C-j>", "<C-w>j", opts)
+map({"n", "v"}, "<C-k>", "<C-w>k", opts)
+map({"n", "v"}, "<C-l>", "<C-w>l", opts)
 
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { silent = true })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { silent = true })
@@ -71,4 +71,7 @@ end, opts)
 map("n", "<leader><S-v>", function()
   require("nvchad.term").new { pos = "vsp", size = 0.35 }
 end, opts)
+
+-- copilot
+map("n", "<leader>c", "<cmd>CopilotChatToggle<cr>", opts);
 

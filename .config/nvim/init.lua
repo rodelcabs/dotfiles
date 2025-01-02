@@ -34,11 +34,11 @@ require "nvchad.autocmds"
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({ "BufEnter" }, {
-    command = "if &buftype == 'terminal' | :startinsert | endif"
+    command = "if &buftype == 'terminal' | :startinsert | endif",
 })
 
 vim.cmd([[
-    hi NoiceCmdLinePopUp guibg=#252628
+    hi NoiceCmdLinePopUp guibg=#1b1f27
 ]])
 
 vim.schedule(function()

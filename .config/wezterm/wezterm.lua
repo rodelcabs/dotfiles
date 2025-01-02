@@ -8,14 +8,14 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 config.color_scheme = "nordfox"
 config.colors = {
-    background = "#1F2021"
+    background = "#1b1f27"
 }
 config.font = wezterm.font_with_fallback({
       { family = "Liga SFMono Nerd Font" },
 })
 config.font_size = 14;
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 70
+-- config.window_background_opacity = 0.9
+-- config.macos_window_background_blur = 70
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
@@ -179,8 +179,8 @@ wezterm.on("update-status", function(window, pane)
   }))
 end)
 
-local padding = {left = 15, right = 10, top = 10, bottom = 0}
--- local padding = {left = 0, right = 0, top = 0, bottom = 0}
+-- local padding = {left = 15, right = 10, top = 10, bottom = 0}
+local padding = {left = 0, right = 0, top = 0, bottom = 0}
 
 wezterm.on('update-status', function(window, pane)
     local overrides = window:get_config_overrides() or {}

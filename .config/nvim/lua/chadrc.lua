@@ -7,7 +7,7 @@ local M = {}
 M.base46 = {
 	theme = "decay",
     theme_toggle = { "decay", "ayu_light" },
-    transparency = true
+    -- transparency = true
 
 }
 

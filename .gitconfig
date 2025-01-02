@@ -1,7 +1,7 @@
 [user]
 	name = rodel.cabubas
 	email = rodel.cabubas@asurion.com
-	signingkey = 84B400B901342BE4
+	signingkey = 91DDD4FC0061C091
 [alias]
   st = status
   p = push -u origin HEAD

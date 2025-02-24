@@ -1,0 +1,59 @@
+[colors]
+background = '#161616'
+foreground = '#f6f1f1'
+cursor_bg = '#f6f1f1'
+cursor_border = '#f6f1f1'
+cursor_fg = '#161616'
+
+ansi = [
+    '#262626',
+    '#ee5396',
+    '#42be65',
+    '#ffe97b',
+    '#33b1ff',
+    '#ff7eb6',
+    '#3ddbd9',
+    '#dde1e6',
+]
+brights = [
+    '#393939',
+    '#ee5396',
+    '#42be65',
+    '#ffe97b',
+    '#33b1ff',
+    '#ff7eb6',
+    '#3ddbd9',
+    '#f6f1f1',
+]
+
+[colors.tab_bar]
+background = "#262626"
+
+[colors.tab_bar.active_tab]
+bg_color = '#161616'
+fg_color = '#f6f1f1'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.inactive_tab]
+bg_color = '#262626'
+fg_color = '#f6f1f1'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+[colors.tab_bar.new_tab]
+bg_color = '#262626'
+fg_color = '#f6f1f1'
+intensity = 'Normal'
+italic = false
+strikethrough = false
+underline = 'None'
+
+
+[metadata]
+name = 'Oxocarbon Dark'
+origin_url = 'https://github.com/nyoom-engineering/oxocarbon'

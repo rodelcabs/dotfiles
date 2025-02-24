@@ -5,15 +5,14 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "penumbra_dark",
     theme_toggle = { "onedark", "ayu_light" },
-    -- transparency = true
+    transparency = true
 }
-
 
 M.ui = {
     statusline = {
-        theme = "minimal",
+        theme = "vscode_colored",
         separator_style = "block"
     },
 }

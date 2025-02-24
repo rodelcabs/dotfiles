@@ -38,7 +38,7 @@ autocmd({ "BufEnter" }, {
 })
 
 vim.cmd([[
-    hi NoiceCmdLinePopUp guibg=#1b1f27
+    hi NoiceCmdLinePopUp guibg=#343433
 ]])
 
 vim.schedule(function()

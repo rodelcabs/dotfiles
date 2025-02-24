@@ -5,6 +5,8 @@ return {
     opts = require "configs.conform",
   },
 
+  {'nyoom-engineering/oxocarbon.nvim'},
+
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -42,9 +44,9 @@ return {
       require("CopilotChat").setup({
         highlight_headers = false,
         separator = '',
-        error_header = '> ## Error',
-        answer_header = '## Copilot',
-        question_header = '## User',
+        error_header = '> # Error',
+        answer_header = '# Copilot',
+        question_header = '# User',
         show_help = false, -- Shows help message as virtual lines when waiting for user input
         show_folds = false, -- Shows folds for sections in chat
         highlight_selection = false, -- Highlight selection
@@ -115,17 +117,17 @@ return {
     end
   },
 
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = function()
-        return require('configs.settings').noice
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
-  },
+  -- {
+  --   "folke/noice.nvim",
+  --   event = "VeryLazy",
+  --   opts = function()
+  --       return require('configs.settings').noice
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "rcarriga/nvim-notify",
+  --   }
+  -- },
 
   {
     "smjonas/inc-rename.nvim",
